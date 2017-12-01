@@ -1,4 +1,4 @@
-package javabean;
+package javabean.user;
 
 public class UserInfo {
     private int user_id;

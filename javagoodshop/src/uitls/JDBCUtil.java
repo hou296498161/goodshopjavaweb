@@ -1,8 +1,6 @@
 package uitls;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class JDBCUtil {
     public static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
@@ -26,14 +24,18 @@ public class JDBCUtil {
     }
 
 
-    public static void closeConn(Connection conn) {
-        if (null != conn) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
+    public static void closeConn(Connection conn, PreparedStatement preparedStatement, ResultSet resultSet) throws SQLException {
+        if (resultSet != null) {
+            resultSet.close();
 
-                e.printStackTrace();
-            }
+        }
+        if (preparedStatement != null) {
+            preparedStatement.clearParameters();
+        }
+        if (null != conn) {
+
+            conn.close();
+
         }
     }
 }

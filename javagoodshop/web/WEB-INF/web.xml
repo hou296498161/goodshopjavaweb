@@ -5,7 +5,7 @@
          version="3.1">
     <servlet>
         <servlet-name>UserServlet</servlet-name>
-        <servlet-class>service.UserServlet</servlet-class>
+        <servlet-class>service.user.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
